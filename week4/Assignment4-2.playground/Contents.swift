@@ -1,3 +1,10 @@
+//方法1
+let odd = (0...100).filter{ $0 % 2 == 1}
+print(odd)
+
+let odd2 = { $0 % 2 == 1 }
+odd2(2)
+odd2(7)
 
 typealias anyCheck  =  (Int) -> Bool
 extension Int {
@@ -12,10 +19,10 @@ func oddCheck(_ value: Int) -> Bool {
     } else { return false }
 }
 
-//方法1
+//方法2-1
 1.checkOperation(oddCheck(_:))
 99.checkOperation(oddCheck(_:))
-//方法2
+//方法2-2
 1.checkOperation { if $0 != 0 && $0 % 2 == 1 {return true} else {return false}}
 
 /* 修改前
@@ -37,3 +44,4 @@ func oddCheck(_ value: Int) -> Bool {
 */
 
 //// 還有負整數問題
+
